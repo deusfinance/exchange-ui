@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { Redirect, Route, Switch } from "react-router-dom";
+import Web3ReactManager from './components/Web3ReactManager';
+import './assets/styles/base.scss';
+import { ToastContainer } from 'react-toastify';
+
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={null}>
+      <Web3ReactManager>
+        <div id="blur-pop"></div>
+        <div className="app-body">
+          <ToastContainer style={{ width: "450px" }} />
+          {/* <Switch> */}
+          <h1>DEUS exchange</h1>
+          {/* </Switch> */}
+        </div>
+      </Web3ReactManager>
+    </Suspense>
   );
 }
 
