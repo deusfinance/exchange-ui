@@ -1,4 +1,5 @@
-# DEPRICATED
+# DEPRECATED
+
 # exchange-ui
 DEUS exchange front-end
 
